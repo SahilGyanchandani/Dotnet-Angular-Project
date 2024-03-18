@@ -4,6 +4,7 @@ using Microsoft.EntityFrameworkCore;
 using Property_Backend.Data;
 using Property_Backend.Data.CityRepo;
 using Property_Backend.Model;
+using Property_Backend.Model.Dto.CityDto;
 
 namespace Property_Backend.Controllers
 {
@@ -33,7 +34,10 @@ namespace Property_Backend.Controllers
             {
                 var city = new City
                 {
-                    cityName = cityName
+                    cityName = cityName,
+                    createdDate = DateTime.UtcNow,
+                    updatedDate = DateTime.UtcNow,
+                    isDeleted = false
                 };
 
                await _cityRepository.AddCitiesAsync(city);  
@@ -42,7 +46,7 @@ namespace Property_Backend.Controllers
             }
             catch (Exception ex)
             {
-                return StatusCode(500, $"An error while adding the city:{ex.Message}");
+                return StatusCode(500,ex.Message);
             }
 
         }
@@ -68,6 +72,31 @@ namespace Property_Backend.Controllers
                 return StatusCode(500, $"An error while deleting the city:{ex.Message}");
             }
 
+        }
+
+        [HttpPut("updateCity")]
+        public async Task<IActionResult> UpdateCity([FromBody] cityUpdateDto cityUpdate)
+        {
+            try
+            {
+                var existingCity = await _cityRepository.GetCityIdAsync(cityUpdate.cityId);
+                if (existingCity == null)
+                {
+                    return NotFound("City not found");
+                }
+                else
+                {
+                    existingCity.cityName = cityUpdate.cityName;
+                    existingCity.updatedDate = DateTime.UtcNow;
+
+                    await _cityRepository.UpdateCityAsync(existingCity);
+                    return Ok("City updated successfully");
+                }
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500,ex.Message);
+            }
         }
 
         

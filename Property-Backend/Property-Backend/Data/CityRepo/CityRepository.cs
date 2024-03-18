@@ -1,14 +1,19 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using AutoMapper;
+using Microsoft.EntityFrameworkCore;
 using Property_Backend.Model;
+using Property_Backend.Model.Dto.CityDto;
 
 namespace Property_Backend.Data.CityRepo
 {
     public class CityRepository : ICityRepository
     {
         private readonly ApplicationDbContext _context;
-        public CityRepository(ApplicationDbContext context)
+        private readonly IMapper _mapper;
+
+        public CityRepository(ApplicationDbContext context,IMapper mapper)
         {
             _context = context;
+            _mapper = mapper;
         }
         public async Task AddCitiesAsync(City city)
         {
@@ -22,11 +27,24 @@ namespace Property_Backend.Data.CityRepo
             await _context.SaveChangesAsync();
         }
 
-        public async Task<List<City>> GetCitiesAsync()
+        public async Task<List<cityResponseDto>> GetCitiesAsync()
         {
             var cities = await _context.Cities.ToListAsync();
+            //var selectedField = cities.Select(c => new cityResponseDto {cityId= c.cityId,cityName= c.cityName }).ToList();
 
-            return cities;
+            return _mapper.Map<List<cityResponseDto>>(cities);
+        }
+
+        public async Task<City> GetCityIdAsync(int cityId)
+        {
+            var getCity = await _context.Cities.FindAsync(cityId);
+            return getCity;
+        }
+
+        public async Task UpdateCityAsync(City city)
+        {
+            _context.Cities.Update(city);
+            await _context.SaveChangesAsync();
         }
     }
 }

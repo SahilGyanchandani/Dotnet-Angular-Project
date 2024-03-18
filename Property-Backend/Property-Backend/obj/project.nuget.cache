@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "OR4gU1UBtmun95VlukOo3kEogEcW9Z4GicQDTBsEhhXk27evygmwAHyw4AITWSjosuQ6HDVdgI6fSkxqmKJEXg==",
+  "dgSpecHash": "HwVYqqajTFjGPsI5V5Q7PwJkbz5VErlvAk2mPKO6/ld6XUdmNXZzZJwScDyIAywRuYueNcLUyQkgGNA3nmi6wA==",
   "success": true,
   "projectFilePath": "C:\\Users\\promact\\Documents\\Pratice-project\\Property-Backend\\Property-Backend\\Property-Backend.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\promact\\.nuget\\packages\\automapper\\13.0.1\\automapper.13.0.1.nupkg.sha512",
     "C:\\Users\\promact\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\promact\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\6.0.0\\microsoft.bcl.asyncinterfaces.6.0.0.nupkg.sha512",
     "C:\\Users\\promact\\.nuget\\packages\\microsoft.codeanalysis.analyzers\\3.3.3\\microsoft.codeanalysis.analyzers.3.3.3.nupkg.sha512",
