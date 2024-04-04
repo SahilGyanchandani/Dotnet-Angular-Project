@@ -28,5 +28,6 @@ namespace Property_Backend.Data
         }
 
         public DbSet<City> Cities { get; set; }
+        public DbSet<Country> Country { get; set; }
     }
 }
