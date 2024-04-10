@@ -11,8 +11,6 @@ using Property_Backend.Model.Dto.CityDto;
 using System.Net.Mail;
 using MimeKit;
 using MailKit.Search;
-using Property_Backend.Services;
-
 namespace Property_Backend.Controllers
 {
     [Route("api/[controller]")]
@@ -22,15 +20,13 @@ namespace Property_Backend.Controllers
         private readonly ICityRepository _cityRepository;
         private readonly ApplicationDbContext _context;
         private readonly IConfiguration _configuration;
-        private readonly IMapProtocol _imap;
         
 
-        public CityController(ApplicationDbContext context ,IConfiguration configuration, ICityRepository cityRepository, IMapProtocol imap)
+        public CityController(ApplicationDbContext context ,IConfiguration configuration, ICityRepository cityRepository)
         {
             _context = context;
             _configuration = configuration;
             _cityRepository = cityRepository;
-            _imap = imap;
         }
         [HttpGet("GetCities")]
         public async Task<IActionResult> GetAllCities()
@@ -111,32 +107,6 @@ namespace Property_Backend.Controllers
                 return StatusCode(500,ex.Message);
             }
         }
-
-        [HttpGet("AwsParameter")]
-        public IActionResult GetString()
-        {
-            var jwtKey = _configuration["Jwt:Key"];
-
-            return Ok(new { jwtKey });   
-        }
-
-        [HttpGet("AzureKeyVault")]
-        public IActionResult GetParameter()
-        {
-            var jwtKey = _configuration["JwtKey"];
-
-            return Ok(new { jwtKey });
-        }
-
-        [HttpGet("FetchEmail")]
-        public IActionResult GetEmails()
-        {
-            // Call the service method to fetch emails
-            var emails = _imap.FetchEmails("imap.example.com", 993, "", "");
-            return Ok(emails);
-        }
-
-
 
     }
 }

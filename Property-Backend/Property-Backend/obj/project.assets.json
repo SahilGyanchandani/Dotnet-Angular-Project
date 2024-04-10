@@ -4024,11 +4024,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\promact\\Documents\\Pratice-project\\Property-Backend\\Property-Backend\\Property-Backend.csproj",
+      "projectUniqueName": "C:\\Users\\promact\\Documents\\Pratice-project\\Dotnet-Angular-Project\\Property-Backend\\Property-Backend\\Property-Backend.csproj",
       "projectName": "Property-Backend",
-      "projectPath": "C:\\Users\\promact\\Documents\\Pratice-project\\Property-Backend\\Property-Backend\\Property-Backend.csproj",
+      "projectPath": "C:\\Users\\promact\\Documents\\Pratice-project\\Dotnet-Angular-Project\\Property-Backend\\Property-Backend\\Property-Backend.csproj",
       "packagesPath": "C:\\Users\\promact\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\promact\\Documents\\Pratice-project\\Property-Backend\\Property-Backend\\obj\\",
+      "outputPath": "C:\\Users\\promact\\Documents\\Pratice-project\\Dotnet-Angular-Project\\Property-Backend\\Property-Backend\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

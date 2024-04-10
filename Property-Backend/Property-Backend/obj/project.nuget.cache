@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "29DyYYRYE/7al8RD+VzrrJvfGNS6G/nFiNoWknlsdm9WfbGN16f5rBdwPVy0mM43Ve143H8kPGlMl3Pkubnw8A==",
+  "dgSpecHash": "fUeND2/YMXz6lgYJjDsWmNrfufuLlGWZWC6hgnL0/bSRjS+VNMFdW978Y9JtZdro5XJHkhzTVp2hD0TxUgX4mg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\promact\\Documents\\Pratice-project\\Property-Backend\\Property-Backend\\Property-Backend.csproj",
+  "projectFilePath": "C:\\Users\\promact\\Documents\\Pratice-project\\Dotnet-Angular-Project\\Property-Backend\\Property-Backend\\Property-Backend.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\promact\\.nuget\\packages\\amazon.extensions.configuration.systemsmanager\\6.0.0\\amazon.extensions.configuration.systemsmanager.6.0.0.nupkg.sha512",
     "C:\\Users\\promact\\.nuget\\packages\\automapper\\13.0.1\\automapper.13.0.1.nupkg.sha512",
